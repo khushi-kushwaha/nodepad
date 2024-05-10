@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profiles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+   <div class="main w-full min-h-screen bg-zinc-500 text-white p-10">
+    <div class="option w-full p-2 flex justify-between">
+      <a class="text-blue-400" href="/">Back</a>
+      <a class="text-red-400 " href="/delete/<%= filename %>">Delete</a>
+    </div>
+     <div class=" form px-10 py-10">
+        <form action="/update/<%= filename %>" method="post">
+            <input class="block w-full p-3 rounded-md bg-zinc-600 mb-4 outline-none inline-block text-zinc-300" type="text" placeholder="Task Name" name="name" value="<%= filename %>"readonly>
+            <textarea class="block w-full p-3 rounded-md bg-zinc-600 outline-none inline-block resize-none" placeholder="content" name="details"><%= fileContent %></textarea>
+            <button class="px-6 py-2 bg-orange-300 rounded-md mt-2">Update</button>
+        </form>
+     </div>
+   </div>
+</body>
+</html>
